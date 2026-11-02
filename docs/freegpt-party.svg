@@ -29,34 +29,37 @@
     <circle cx="1180" cy="481" r="4"/>
   </g>
   <g font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
-    <text x="48" y="94" fill="#d0bdff" font-size="58" font-weight="800" letter-spacing="-2">freegpt.party</text>
+    <text x="48" y="94" fill="#d0bdff" font-family="'Noto Sans', system-ui, sans-serif" font-size="58" font-weight="800" letter-spacing="-2">freegpt.party</text>
     <text x="48" y="142" fill="#f1edf9" font-size="26">A minimal AI chat. Choose a model, or connect your own API.</text>
 
-    <rect x="48" y="218" width="1104" height="68" rx="12" fill="#11111d"/>
-    <text x="68" y="259" font-family="ui-monospace, 'DejaVu Sans Mono', monospace" font-size="17" fill="#f1edf9">https://freegpt.party/#<tspan fill="#b9a3ff">server=https://api.example.com</tspan><tspan fill="#ffcf75">&amp;model=GLM-5.3-Flash</tspan><tspan fill="#75f0cc">&amp;api_key=KEY</tspan></text>
+    <rect x="48" y="186" width="1104" height="68" rx="12" fill="#11111d"/>
+    <text x="68" y="227" font-family="ui-monospace, 'DejaVu Sans Mono', monospace" font-size="20" fill="#f1edf9">https://freegpt.party/#<tspan fill="#b9a3ff">server=https://api.example.com</tspan><tspan fill="#ffcf75">&amp;model=GLM-5.3-Flash</tspan><tspan fill="#75f0cc">&amp;api_key=KEY</tspan></text>
 
     <g fill="#322b47" stroke="#534762">
-      <rect x="48" y="314" width="352" height="202" rx="16"/>
-      <rect x="424" y="314" width="352" height="202" rx="16"/>
-      <rect x="800" y="314" width="352" height="202" rx="16"/>
+      <rect x="48" y="286" width="352" height="230" rx="16"/>
+      <rect x="424" y="286" width="352" height="230" rx="16"/>
+      <rect x="800" y="286" width="352" height="230" rx="16"/>
     </g>
-    <g transform="translate(0 30)" font-family="ui-monospace, monospace" font-size="27" font-weight="700">
+    <g transform="translate(0 10)" font-family="ui-monospace, monospace" font-size="27" font-weight="700">
       <text x="72" y="359" fill="#b9a3ff">server</text>
       <text x="448" y="359" fill="#ffcf75">model</text>
       <text x="824" y="359" fill="#75f0cc">api_key</text>
     </g>
-    <g transform="translate(0 30)" fill="#f1edf9" font-size="22">
+    <g transform="translate(0 10)" fill="#f1edf9" font-size="22">
       <text x="72" y="399">Where your messages go.</text>
       <text x="448" y="399">Which AI answers.</text>
       <text x="824" y="399">Your API access key.</text>
     </g>
-    <g fill="#d1c7e0" font-size="18">
-      <text x="72" y="475">Default: api.llm7.io</text>
-      <text x="448" y="475">Default: nemotron-3-nano:30b</text>
-      <text x="824" y="475">Default: none</text>
+    <g fill="#d1c7e0" font-size="20">
+      <text x="72" y="451">Default: api.llm7.io</text>
+      <text x="448" y="451">Default: nemotron-3-nano:30b</text>
+      <text x="824" y="451">Default: none</text>
     </g>
 
-    <text x="48" y="559" fill="#d1c7e0" font-size="19">Reload to apply. Custom APIs must be OpenAI-compatible and allow browser access (CORS).</text>
-    <text x="48" y="595" fill="#ffcf75" font-size="19">Messages go directly to your provider. Keep links containing API keys private.</text>
+    <text x="48" y="559" fill="#d1c7e0" font-size="20">OpenAI-compatible API with CORS required. Reload after changing settings.</text>
+    <text x="48" y="595" fill="#ffcf75" font-size="20">Messages go to your provider. Keep API keys private.</text>
+    <a href="https://github.com/tinygrad/freegptparty">
+      <text x="1152" y="595" text-anchor="end" fill="#b9a3ff" font-size="20">github.com/tinygrad/freegptparty</text>
+    </a>
   </g>
 </svg>
