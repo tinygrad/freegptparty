@@ -1,5 +1,7 @@
 # freegpt.party
 
+![freegpt.party URL parameter reference: server, model, and api_key.](docs/freegpt-party.svg)
+
 A minimal browser-based AI chat, based on [tinygrad's chat interface](https://github.com/tinygrad/tinygrad/blob/master/tinygrad/llm/chat.html).
 
 ## Use it
@@ -11,7 +13,7 @@ A minimal browser-based AI chat, based on [tinygrad's chat interface](https://gi
 
 Refresh the page to start a new conversation. Chat history lives only in the page's memory and is lost on refresh.
 
-By default, the app connects to `https://api.llm7.io` without an API key and selects `nemotron-3-nano:30b` if available. Available models, rate limits, and service availability depend on the API provider.
+With no fragment, the app adds `#server=https://api.llm7.io&model=nemotron-3-nano:30b&api_key=` to the URL. Existing fragments are left untouched: omitting `server` uses the page's own origin, and omitting `model` selects the first available model. Available models, rate limits, and service availability depend on the API provider.
 
 ## Use another model or API server
 
@@ -19,14 +21,14 @@ Configure the app with URL fragment parameters (after `#`, not `?`):
 
 | Parameter | Purpose |
 | --- | --- |
-| `server` | API base URL, without a trailing slash or `/v1`. |
+| `server` | API base URL, without `/v1`. Trailing slashes are stripped. |
 | `model` | Model ID to select from the server's model list. |
 | `api_key` | Optional API key, sent to the server as a Bearer token. |
 
 For example, select a model:
 
 ```text
-https://freegpt.party/#model=nemotron-3-nano%3A30b
+https://freegpt.party/#server=https://api.llm7.io&model=GLM-5.3-Flash
 ```
 
 Or connect to your own API (replace the example values):
@@ -45,24 +47,6 @@ The server must support OpenAI-compatible `GET /v1/models` and streaming `POST /
 - The site is a static frontend, not an API proxy. Markdown JavaScript is hosted alongside the page rather than fetched from a third-party CDN.
 - URL fragments are not sent to the static hosting server, but keys in URLs can remain in browser history or be exposed when sharing links. Don't share URLs containing API keys; use restricted, disposable keys where possible.
 
-## Run locally
+## Contributing
 
-Serve the `public/` directory with any static HTTP server, for example:
-
-```sh
-python3 -m http.server 8000 --directory public
-```
-
-Open `http://localhost:8000`. No build step is needed. Your API server must allow this origin too.
-
-## Deploy
-
-The repo is configured for Cloudflare Workers static assets in `wrangler.jsonc`.
-
-```sh
-npm ci
-npx wrangler login
-npx wrangler deploy
-```
-
-For Cloudflare Git-connected builds, leave the build command empty and use `npx wrangler deploy` as the deploy command. Everything under `public/` is published.
+Low line count, extremely tasteful PRs may be merged.

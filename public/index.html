@@ -30,7 +30,8 @@
 <script src="/assets/cdn.jsdelivr.net/npm/markdown-it@15.0.1/dist/browser/markdown-it.umd.min.js"
   integrity="sha384-lX8HkDCIMBsB/UN/Vv18JAmM0RGX9rzKdL1513w2k3hKLBDcvj5jHUaMZdQpbOm4"></script>
 <script>
-  const params = new URLSearchParams(location.hash.slice(1)), server = params.get('server') || 'https://api.llm7.io';
+  if (!location.hash) history.replaceState(null, '', '#server=https://api.llm7.io&model=nemotron-3-nano:30b&api_key=');
+  const params = new URLSearchParams(location.hash.slice(1)), server = (params.get('server') || '').replace(/\/+$/, '');
   const headers = {'Content-Type': 'application/json'};
   if (params.get('api_key')) headers.Authorization = 'Bearer ' + params.get('api_key');
   function showError(e) {
@@ -44,7 +45,7 @@
   }
   request('/v1/models').then(r => r.json()).then(r => {
     if (!r.data?.length) throw new Error('No models returned by the server.');
-    model.replaceChildren(...r.data.map(m => new Option(m.id, m.id, false, m.id === (params.get('model') || 'nemotron-3-nano:30b'))));
+    model.replaceChildren(...r.data.map(m => new Option(m.id, m.id, false, m.id === params.get('model'))));
   }).catch(showError);
   let generating = false;
   input.onkeydown = (e) => { if (e.key === 'Enter' && !e.shiftKey && !e.isComposing) {

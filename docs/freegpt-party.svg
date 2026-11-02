@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">freegpt.party — a minimal AI chat</title>
+  <desc id="desc">Choose a model and chat, or customize the URL: server connects your API, model selects a model, and api_key supplies an optional Bearer token. Defaults are https://api.llm7.io, nemotron-3-nano:30b when available, and no API key. All parameters are optional. Messages go directly to your API provider. Don't share links containing keys.</desc>
+  <defs>
+    <linearGradient id="bg" x2="1" y2="1">
+      <stop stop-color="#191827"/>
+      <stop offset="1" stop-color="#29213f"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" rx="24" fill="url(#bg)"/>
+  <!-- Decorations stay clear of the text and parameter cards. -->
+  <path d="M700 24Q910 96 1152 24" fill="none" stroke="#716184" stroke-width="2"/>
+  <g>
+    <path d="m734 35 30 8-22 25Z" fill="#b9a3ff"/>
+    <path d="m809 53 30 4-18 27Z" fill="#ffcf75"/>
+    <path d="m887 61 30-1-13 29Z" fill="#75f0cc"/>
+    <path d="m966 57 30-5-10 31Z" fill="#ff8cbc"/>
+    <path d="m1045 43 30-8-7 32Z" fill="#b9a3ff"/>
+  </g>
+  <g fill="none" stroke-width="5" stroke-linecap="round">
+    <path d="m1090 90 9 14 M20 190l7 12 m1153 94 10-7 M1173 394l8 13" stroke="#75f0cc"/>
+    <path d="m1010 103 14-5 M18 464l8-9 m1141-278 10 8 M1178 556l-7 10" stroke="#ffcf75"/>
+    <path d="m691 91 11 8 M25 296l-8 9 m1159-134 11-5 M20 572l8 9" stroke="#ff8cbc"/>
+    <path d="m793 105 9-7 M1175 267l-8 10 M23 376l-7 8" stroke="#b9a3ff"/>
+  </g>
+  <g fill="#ffcf75">
+    <circle cx="1127" cy="114" r="4"/>
+    <circle cx="744" cy="94" r="3"/>
+    <circle cx="1180" cy="481" r="4"/>
+  </g>
+  <g font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+    <text x="48" y="94" fill="#d0bdff" font-size="58" font-weight="800" letter-spacing="-2">freegpt.party</text>
+    <text x="48" y="142" fill="#f1edf9" font-size="26">A minimal AI chat. Choose a model, or connect your own API.</text>
+
+    <rect x="48" y="218" width="1104" height="68" rx="12" fill="#11111d"/>
+    <text x="68" y="259" font-family="ui-monospace, 'DejaVu Sans Mono', monospace" font-size="17" fill="#f1edf9">https://freegpt.party/#<tspan fill="#b9a3ff">server=https://api.example.com</tspan><tspan fill="#ffcf75">&amp;model=GLM-5.3-Flash</tspan><tspan fill="#75f0cc">&amp;api_key=KEY</tspan></text>
+
+    <g fill="#322b47" stroke="#534762">
+      <rect x="48" y="314" width="352" height="202" rx="16"/>
+      <rect x="424" y="314" width="352" height="202" rx="16"/>
+      <rect x="800" y="314" width="352" height="202" rx="16"/>
+    </g>
+    <g transform="translate(0 30)" font-family="ui-monospace, monospace" font-size="27" font-weight="700">
+      <text x="72" y="359" fill="#b9a3ff">server</text>
+      <text x="448" y="359" fill="#ffcf75">model</text>
+      <text x="824" y="359" fill="#75f0cc">api_key</text>
+    </g>
+    <g transform="translate(0 30)" fill="#f1edf9" font-size="22">
+      <text x="72" y="399">Where your messages go.</text>
+      <text x="448" y="399">Which AI answers.</text>
+      <text x="824" y="399">Your API access key.</text>
+    </g>
+    <g fill="#d1c7e0" font-size="18">
+      <text x="72" y="475">Default: api.llm7.io</text>
+      <text x="448" y="475">Default: nemotron-3-nano:30b</text>
+      <text x="824" y="475">Default: none</text>
+    </g>
+
+    <text x="48" y="559" fill="#d1c7e0" font-size="19">Reload to apply. Custom APIs must be OpenAI-compatible and allow browser access (CORS).</text>
+    <text x="48" y="595" fill="#ffcf75" font-size="19">Messages go directly to your provider. Keep links containing API keys private.</text>
+  </g>
+</svg>
