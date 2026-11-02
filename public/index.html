@@ -29,8 +29,7 @@
 <div id="composer">
 <textarea id="input" rows="1" placeholder="Ask anything" autofocus></textarea>
 <select id="model" aria-label="Model"></select></div>
-<script src="/assets/cdn.jsdelivr.net/npm/markdown-it@15.0.1/dist/browser/markdown-it.umd.min.js"
-  integrity="sha384-lX8HkDCIMBsB/UN/Vv18JAmM0RGX9rzKdL1513w2k3hKLBDcvj5jHUaMZdQpbOm4"></script>
+<script src="./assets/cdn.jsdelivr.net/npm/markdown-it@15.0.1/dist/browser/markdown-it.umd.min.js"></script>
 <script>
   if (!location.hash) history.replaceState(null, '', '#server=https://api.llm7.io&model=nemotron-3-nano:30b&api_key=');
   const params = new URLSearchParams(location.hash.slice(1)), server = (params.get('server') || '').replace(/\/+$/, '');
