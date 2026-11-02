@@ -50,3 +50,5 @@ The server must support OpenAI-compatible `GET /v1/models` and streaming `POST /
 ## Contributing
 
 Low line count, extremely tasteful PRs may be merged.
+
+After editing `docs/freegpt-party.svg`, run `npm run render:card` to regenerate `public/social-card.png`. Requires Python 3 with Pillow, `rsvg-convert` (librsvg), and Noto Sans ExtraBold. Commit both the SVG and PNG; rendering isn't part of deployment.

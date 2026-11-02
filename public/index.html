@@ -74,7 +74,9 @@
       buf = lines.pop();
       for (const ln of lines)
         if (ln.startsWith('data: ') && !ln.includes('[DONE]')) {
-          const dl = JSON.parse(ln.slice(6)).choices[0]?.delta;
+          const data = JSON.parse(ln.slice(6));
+          if (data.error) throw new Error(data.error.message || 'API error');
+          const dl = data.choices?.[0]?.delta;
           if (dl?.reasoning_content) { rsn += dl.reasoning_content; thinking.textContent = rsn }
           if (dl?.content) { txt += dl.content; answer.innerHTML = md.render(txt) }
         }

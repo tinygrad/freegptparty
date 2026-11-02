@@ -1,6 +1,9 @@
 {
   "name": "freegpt-party",
   "private": true,
+  "scripts": {
+    "render:card": "python3 scripts/render-card.py"
+  },
   "devDependencies": {
     "wrangler": "4.156.1"
   }
