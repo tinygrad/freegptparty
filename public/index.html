@@ -73,7 +73,7 @@
       const lines = buf.split('\n');
       buf = lines.pop();
       for (const ln of lines)
-        if (ln.startsWith('data: ') && !ln.includes('[DONE]')) {
+        if (ln.startsWith('data: ') && ln.slice(6).trim() !== '[DONE]') {
           const data = JSON.parse(ln.slice(6));
           if (data.error) throw new Error(data.error.message || 'API error');
           const dl = data.choices?.[0]?.delta;
