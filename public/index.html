@@ -59,7 +59,8 @@
   async function send() {
     if (!input.value.trim()) return;
     msgs.push({role: 'user', content: input.value.trim()});
-    chat.innerHTML += '<div class="msg user">' + input.value.trim().replace(/</g, '&lt;') + '</div>';
+    const user = document.createElement('div'); user.className = 'msg user';
+    user.textContent = input.value.trim(); chat.appendChild(user);
     input.value = '';
     const d = document.createElement('div'); d.className = 'msg'; chat.appendChild(d);
     d.innerHTML = '<span style="color:#888"></span><div class="answer"></div>'; const [thinking, answer] = d.children;
